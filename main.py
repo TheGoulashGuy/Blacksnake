@@ -24,7 +24,7 @@ player_hand.dealCard() #This deals 1st of player's 2 initial cards
 player_hand.dealCard() #This deals 2nd of player's 2 initial cards
 dealer_hand.dealCard()
 dealer_hand.dealCard()
-player_hand.calcHandValue()
+#player_hand.calcHandValue()
 player_hand.showHand()
 
 game_in_session = True
