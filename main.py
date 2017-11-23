@@ -21,10 +21,11 @@ def playerHits():
 
 deckClass.new_deck.createDeck() #This creates the card deck and shuffles it.
 player_hand.dealCard() #This deals 1st of player's 2 initial cards
+player_hand.calcHandValue()
 player_hand.dealCard() #This deals 2nd of player's 2 initial cards
+player_hand.calcHandValue()
 dealer_hand.dealCard()
 dealer_hand.dealCard()
-#player_hand.calcHandValue()
 player_hand.showHand()
 
 game_in_session = True
