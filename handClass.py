@@ -16,7 +16,6 @@ class Hand(object):
 
 	def calcHandValue(self):
 		self.new_value = self.hand[-1]
-		print(self.new_value)
 		self.value_list.insert(0,self.new_value)
 		if self.value_list[0] == "K" or self.new_value[0] == "Q" or self.new_value[0] == "J":
 			self.value += 10
