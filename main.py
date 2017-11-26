@@ -32,7 +32,7 @@ def playerStands():
 		print("It's a draw.")
 		exit()
 	elif dealer_hand.value > 21:
-		print("The dealer busted--you win " + str(player_bet_input + "!"))
+		print("The dealer busted--you win $" + str(player_bet_input) + "!")
 		exit()
 	else:
 		print("The dealer won.")

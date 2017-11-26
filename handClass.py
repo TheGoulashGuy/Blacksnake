@@ -18,7 +18,9 @@ class Hand(object):
 					self.value += 11
 				else:
 					self.value += 1
-			self.new_value = deckClass.ranks[card[0]]
+			else:
+				pass
+		self.new_value = deckClass.ranks[card[0]]
 		self.value += self.new_value
 
 	def showHand(self):
