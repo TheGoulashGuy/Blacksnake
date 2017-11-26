@@ -4,9 +4,6 @@ import handClass, deckClass
 
 print("Welcome to Blacksnake, a Python implementation of Blackjack. *Gambling is not encouraged*")
 
-def winCheck():
-	pass
-
 player_name_input = input("Enter your name: ")
 player_bet_input = float(input("Enter the amount of money you'd like to bet: $"))
 player_hand = handClass.Hand(str(player_name_input), player_bet_input)
