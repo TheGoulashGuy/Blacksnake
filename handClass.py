@@ -21,10 +21,12 @@ class Hand(object):
 			self.value += 10
 		elif self.new_value[0] in deckClass.ranks:
 			self.value += int(self.new_value[0])
-		elif self.new_value[0] == "Ace":
-			'''Write function to handle when player is dealt an Ace!'''
-			#aceFunction()
-			pass
+		elif self.new_value[0] == "A":
+			self.ace_value = 0
+			if (self.ace_value + 11) + self.value >= 21:
+				self.value += 1
+			else:
+				self.value += 11
 		else:
 			pass
 

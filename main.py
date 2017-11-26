@@ -48,3 +48,9 @@ while game_in_session == True:
 		pass
 	else:
 		print('Error, please input "h" or "s": ')
+
+	if dealer_hand.value <=16:
+		dealer_hand.dealCard()
+	else:
+		pass
+	print("Dealer hand value is: " + str(dealer_hand.value))
