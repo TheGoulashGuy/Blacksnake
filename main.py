@@ -51,13 +51,15 @@ player_hand.showHand()
 
 game_in_session = True
 while game_in_session == True:
-	player_choice = input("Would you like to stand (s) or hit (h)? ")
+	player_choice = input("Would you like to stand (s) or hit (h)?\n>>")
+	print("\n")
 	if player_choice == 'h':
 		playerHits()
 	elif player_choice == 's':
 		playerStands()
 	else:
-		print('Error, please input "h" or "s": ')
+		print('Error, please input "h" or "s":\n>>=')
+		print("\n")
 
 	if dealer_hand.value <= 16:
 		dealer_hand.dealCard()
