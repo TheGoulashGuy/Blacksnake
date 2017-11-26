@@ -21,11 +21,13 @@ def playerHits():
 		exit()
 	if player_hand.value > 21:
 		print("You've busted--the dealer wins.")
+		print("The dealer's hand value was " + str(dealer_hand.value))
 		exit()
 	else:
 		pass
 
 def playerStands():
+	print(dealer_hand.value)
 	if player_hand.value <= 21 and player_hand.value > dealer_hand.value:
 		print("Congratulations, you win $" + str(player_bet_input) + "!")
 		print("The dealer's hand value was " + str(dealer_hand.value))
@@ -33,8 +35,11 @@ def playerStands():
 	elif player_hand.value == dealer_hand.value:
 		print("It's a draw.")
 		exit()
+	elif dealer_hand.value > 21:
+		print("The dealer busted--you win " + str(player_bet_input + "!"))
+		exit()
 	else:
-		print("The dealer wins.")
+		print("The dealer won.")
 		exit()
 
 '''These function calls will begin the initial setup of the game'''
