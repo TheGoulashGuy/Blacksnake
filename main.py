@@ -2,9 +2,7 @@
 
 import handClass, deckClass
 
-print('''
-Welcome to Blacksnake, a Python implementation of Blackjack. *Gambling is not encouraged*
-''')
+print("Welcome to Blacksnake, a Python implementation of Blackjack. *Gambling is not encouraged*")
 
 def winCheck():
 	pass
@@ -16,25 +14,36 @@ dealer_hand = handClass.Hand('dealer', 0)
 
 def playerHits():
 	player_hand.dealCard()
-	player_hand.calcHandValue()
 	player_hand.showHand()
-
-def playerStands():
-	dealer_hand.dealCard()
-	dealer_hand.calcHandValue()
-	if dealer_hand.value <= 21:
-		print("Dealer wins.")
+	if player_hand.value == 21:
+		print("Congratulations, you win $" + str(player_bet_input) + "!")
+		print("The dealer's hand value was " + str(dealer_hand.value))
+		exit()
+	if player_hand.value > 21:
+		print("You've busted--the dealer wins.")
+		exit()
 	else:
 		pass
-deckClass.new_deck.createDeck() #This creates the card deck and shuffles it.
+
+def playerStands():
+	if player_hand.value <= 21 and dealer_hand.value < player_hand.value:
+		print("Congratulations, you win $" + str(player_bet_input) + "!")
+		print("The dealer's hand value was " + str(dealer_hand.value))
+		exit()
+	else:
+		print("Dealer wins.")
+		exit()
+
+'''These function calls will begin the initial setup of the game'''
+new_deck = deckClass.Deck() #These two lines create the card deck and shuffle it.
+new_deck.createDeck()
+
 player_hand.dealCard() #This deals 1st of player's 2 initial cards
-player_hand.calcHandValue()
 player_hand.dealCard() #This deals 2nd of player's 2 initial cards
-player_hand.calcHandValue()
+
 dealer_hand.dealCard()
-dealer_hand.calcHandValue()
 dealer_hand.dealCard()
-dealer_hand.calcHandValue()
+
 player_hand.showHand()
 
 game_in_session = True
@@ -49,8 +58,7 @@ while game_in_session == True:
 	else:
 		print('Error, please input "h" or "s": ')
 
-	if dealer_hand.value <=16:
+	if dealer_hand.value <= 16:
 		dealer_hand.dealCard()
 	else:
 		pass
-	print("Dealer hand value is: " + str(dealer_hand.value))
