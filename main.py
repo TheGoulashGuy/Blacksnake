@@ -43,9 +43,19 @@ new_deck.createDeck()
 
 player_hand.dealCard() #This deals 1st of player's 2 initial cards
 player_hand.dealCard() #This deals 2nd of player's 2 initial cards
+if player_hand.value == 21:
+	print("You've pulled a Blackjack! You win " + str(player_bet_input) + "!")
+	exit()
+else:
+	pass
 
 dealer_hand.dealCard()
 dealer_hand.dealCard()
+if dealer_hand.value == 21:
+	print("The dealer pulled a Blackjack. You lose.")
+	exit()
+else:
+	pass
 
 player_hand.showHand()
 
