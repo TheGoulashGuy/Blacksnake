@@ -26,12 +26,15 @@ def playerHits():
 		pass
 
 def playerStands():
-	if player_hand.value <= 21 and dealer_hand.value < player_hand.value:
+	if player_hand.value <= 21 and player_hand.value > dealer_hand.value:
 		print("Congratulations, you win $" + str(player_bet_input) + "!")
 		print("The dealer's hand value was " + str(dealer_hand.value))
 		exit()
+	elif player_hand.value == dealer_hand.value:
+		print("It's a draw.")
+		exit()
 	else:
-		print("Dealer wins.")
+		print("The dealer wins.")
 		exit()
 
 '''These function calls will begin the initial setup of the game'''
@@ -53,8 +56,6 @@ while game_in_session == True:
 		playerHits()
 	elif player_choice == 's':
 		playerStands()
-		#wincheck() #This function will set game_in_session to false if someone has won, thus ending the main game loop.
-		pass
 	else:
 		print('Error, please input "h" or "s": ')
 

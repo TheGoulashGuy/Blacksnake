@@ -2,7 +2,7 @@
 
 import random
 
-ranks = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'King':10, 'Queen':10, 'Jack':10, 'Ace':11}
+ranks = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'K':10, 'Q':10, 'J':10, 'A':11}
 suits = ('Spades', 'Hearts', 'Clubs', 'Diamonds')
 deck = list()
 
