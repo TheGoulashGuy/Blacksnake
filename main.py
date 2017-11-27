@@ -16,10 +16,12 @@ def playerHits():
 		print("Congratulations, you win $" + str(player_bet_input) + "!")
 		print("The dealer's hand value was " + str(dealer_hand.value))
 		exit()
-	if player_hand.value > 21:
+
+	elif player_hand.value > 21 and dealer_hand.value < 21:
 		print("You've busted--the dealer wins.")
 		print("The dealer's hand value was " + str(dealer_hand.value))
 		exit()
+
 	else:
 		pass
 
@@ -63,6 +65,12 @@ player_hand.showHand()
 
 game_in_session = True
 while game_in_session == True:
+	if dealer_hand.value <= 16:
+		dealer_hand.dealCard()
+	elif dealer_hand.value > 21:
+		print("The dealer busted. You win $" + str(player_bet_input) + "!")
+		exit()
+
 	player_choice = input("Would you like to stand (s) or hit (h)?\n>>")
 	print("\n")
 	if player_choice == 'h':
@@ -72,9 +80,3 @@ while game_in_session == True:
 	else:
 		print('Error, please input "h" or "s":\n>>=')
 		print("\n")
-
-	if dealer_hand.value <= 16:
-		dealer_hand.dealCard()
-	elif dealer_hand.value > 21:
-		print("The dealer busted. You win $" + str(player_bet_input) + "!")
-		exit()
