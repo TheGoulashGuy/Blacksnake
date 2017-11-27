@@ -7,7 +7,7 @@ print("Welcome to Blacksnake, a Python implementation of Blackjack. *Gambling is
 player_name_input = input("Enter your name: ")
 player_bet_input = float(input("Enter the amount of money you'd like to bet: $"))
 player_hand = handClass.Hand(str(player_name_input), player_bet_input)
-dealer_hand = handClass.Hand('dealer', 0)
+dealer_hand = handClass.Hand('dealer', player_bet_input)
 
 def playerHits():
 	player_hand.dealCard()
@@ -75,5 +75,6 @@ while game_in_session == True:
 
 	if dealer_hand.value <= 16:
 		dealer_hand.dealCard()
-	else:
-		pass
+	elif dealer_hand.value > 21:
+		print("The dealer busted. You win $" + str(player_bet_input) + "!")
+		exit()
