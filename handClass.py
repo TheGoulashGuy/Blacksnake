@@ -3,9 +3,7 @@
 import deckClass, pdb
 
 class Hand(object):
-	def __init__(self, name, bet):
-		self.name = name
-		self.bet = bet
+	def __init__(self, hand, value):
 		self.hand = list()
 		self.value = 0
 
