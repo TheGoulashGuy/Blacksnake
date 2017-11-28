@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import deckClass, pdb
+import deckClass
 
 class Hand(object):
 	def __init__(self, hand, value):

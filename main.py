@@ -71,8 +71,7 @@ while game_in_session == True:
 		print("The dealer busted. You win $" + str(player_bet_input) + "!")
 		exit()
 
-	player_choice = input("Would you like to stand (s) or hit (h)?\n>>")
-	print("\n")
+	player_choice = input("Would you like to stand (s) or hit (h)?\n\n>>")
 	if player_choice == 'h':
 		playerHits()
 	elif player_choice == 's':
